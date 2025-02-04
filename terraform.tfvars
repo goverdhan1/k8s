@@ -27,7 +27,7 @@ existing_cluster_sg_id   = ""  # Only needed if use_existing_security_groups = t
 create_route53_records = true
 namespace      = "default"    # The namespace where you want to create the secret
 ghcr_username  = "goverdhansoulverse"
-ghcr_token     = "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"
+
 replica_count     = 1
 container_port    = 3000      # adjust to your application's port
 health_check_path = "/health" # adjust to your application's health check endpoint
