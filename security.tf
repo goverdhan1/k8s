@@ -95,6 +95,19 @@ resource "aws_security_group" "eks_nodes_sg" {
     cidr_blocks = ["0.0.0.0/0"]
     description = "Allow SSH access"
   }
+  ingress {
+    from_port       = 443
+    to_port         = 443
+    protocol        = "tcp"
+    security_groups = var.use_existing_security_groups ? [var.existing_cluster_sg_id] : [aws_security_group.eks_cluster_sg[0].id] # Allow control plane
+  }
+
+  ingress {
+    from_port       = 10250
+    to_port         = 10250
+    protocol        = "tcp"
+    security_groups = var.use_existing_security_groups ? [var.existing_cluster_sg_id] : [aws_security_group.eks_cluster_sg[0].id] # Allow health checks
+  }
 
   egress {
     from_port   = 0

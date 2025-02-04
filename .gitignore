@@ -17,7 +17,7 @@ crash.log
 
 # Ignore generated .tfvars files (if any contain sensitive data)
 *.auto.tfvars
-*.tfvars
+# *.tfvars
 *.tfvars.json
 
 # Ignore logs and debugging output

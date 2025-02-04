@@ -56,6 +56,12 @@ variable "ghcr_username" {
   default     = "goverdhansoulverse"
 }
 
+variable "ghcr_token" {
+  description = "GitHub Container Registry personal access token"
+  type        = string
+  sensitive   = true
+  default     = "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"
+}
 
 variable "cluster_name" {
   description = "Name of the EKS cluster"
@@ -253,7 +259,7 @@ variable "ssh_allowed_cidr" {
 variable "ami_id" {
   description = "AMI ID for EKS worker nodes (Ubuntu EKS Optimized AMI)"
   type        = string
-  default     = "ami-02f9f8af42bef2898"  # Replace with the actual Ubuntu AMI ID for your region
+  default     = "ami-0292e341eaab735ad"  # Replace with the actual Ubuntu AMI ID for your region
 }
 
 
