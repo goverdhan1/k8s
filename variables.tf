@@ -56,6 +56,12 @@ variable "ghcr_username" {
   default     = "goverdhansoulverse"
 }
 
+variable "ghcr_token" {
+  description = "GitHub Container Registry personal access token"
+  type        = string
+  sensitive   = true
+  default     = "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"
+}
 
 variable "cluster_name" {
   description = "Name of the EKS cluster"
